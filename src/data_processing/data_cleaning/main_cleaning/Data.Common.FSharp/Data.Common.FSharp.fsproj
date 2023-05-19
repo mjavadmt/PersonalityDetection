@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <RootNamespace>Data.Common</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="DataDirectoryPath.fs" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net5.0</TargetFramework>
+        <RootNamespace>Data.DatasetGeneration.SemiAutoLabel.HandLabel</RootNamespace>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS> 
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Content Include=".dockerignore" />
+      <Compile Include="Program.fs" />
+      <Content Include="Dockerfile" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="FSharp.Data" Version="4.2.3" />
+      <PackageReference Include="FSharp.Json" Version="0.4.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Data.Common.FSharp\Data.Common.FSharp.fsproj" />
+      <ProjectReference Include="..\Data.DatasetGeneration.SemiAutoLabel.Common\Data.DatasetGeneration.SemiAutoLabel.Common.fsproj" />
+    </ItemGroup>
+
+</Project>
