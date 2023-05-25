@@ -17,5 +17,6 @@ this task is mainly doing the data cleaning on our Persian dataset.
 Operation of this code : 
 - removing any non-Persian character
 - removing emoji
-- removing links and usernames
+- removing links and usernames 
+<br />
 at the end we've got *aggressively_cleaned_dataset* which are each users' tweets separated just with space
