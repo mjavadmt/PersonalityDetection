@@ -5,7 +5,7 @@ from hazm import sent_tokenize, word_tokenize
 root_dir = Path(__file__).resolve().parents[3]
 final_dataset_path = root_dir / "data" / "clean" / "datasets.json"
 final_dataset_path = final_dataset_path.as_posix()
-final_dataset = pd.read_json(final_dataset_path)
+
 
 
 def make_dir(name):
@@ -29,18 +29,23 @@ def tokenize_a_user_words(row):
     return row
 
 
-def sentence_tokenizer():
+def sentence_tokenizer(final_dataset):
     print("sentence tokenizer ...")
     df = final_dataset.apply(tokenize_a_user_sentences, axis=1)
     path = make_dir("sentence")
     df.to_json(f"{path}/sent_tokenized.json")
 
 
-def word_tokenizer():
+def word_tokenizer(final_dataset):
     print("word tokenizer ...")
     df = final_dataset.apply(tokenize_a_user_words, axis=1)
     path = make_dir("word")
     df.to_json(f"{path}/word_tokenized.json")
+
+def apply_main_tokenizer():
+    final_dataset = pd.read_json(final_dataset_path)
+    sentence_tokenizer(final_dataset)
+    word_tokenizer(final_dataset)
 
 
 # sentence_tokenizer()

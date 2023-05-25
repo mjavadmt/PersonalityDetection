@@ -1,16 +1,15 @@
 # PersonalityDetection
 
 This repository is for personality detection task based Myers-Briggs(MBTI) 16 types on [Persian dataset](https://huggingface.co/datasets/mjavadmt/mbti-persian-twitter). 
-You can simply do the data collection and data cleaning task by running *python src/data_processing/main.py*
+You can simply do the data collection and data cleaning task by running *python src/data_processing/main.py all*
 
-there are various subparts of this module that each will be done individually:
-- *main_cleaner.py* : do just the cleaning part
-- *main_collector.py* : do just the crawling part
-- *main_collector_and_cleaner.py* : do both the crawling and cleaning part
-- *main_tokenizer.py* : do just the tokenizing part
+there are various subparts of this module that each will be done individually instead of *all* args:
+- *collect* : do just the crawling part
+- *clean* : do just the cleaning part
+- *tokenize* : do just the tokenizing part
 
 ## Data Collection
-this part is done by searching for MBTI keywords on each user and then collecting all of this user's tweets(with -*tweepy*).
+this part is done by searching for MBTI keywords on each user and then collecting all of this user's tweets(with *tweepy*).
 
 ## Data Cleaning
 this part has been done by *F#* programming which is faster than *pandas* and other *python* library.
