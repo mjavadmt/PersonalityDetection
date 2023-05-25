@@ -18,4 +18,5 @@ Operation of this code :
 - removing any non-Persian character
 - removing emoji
 - removing links and usernames 
+
 at the end we've got *aggressively_cleaned_dataset* which are each users' tweets separated just with space
