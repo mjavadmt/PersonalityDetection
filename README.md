@@ -9,6 +9,7 @@ there are various subparts of this module that each will be done individually in
 - *clean* : do just the cleaning part
 - *tokenize* : do just the tokenizing part
 - *analyze* : do just analyze part
+
 -- remember that dataset created during running of code is sample of our whole dataset. for analyzing part you should download
 dataset from this [Link](https://huggingface.co/datasets/mjavadmt/mbti-persian-twitter). after downloading you should extract and locate the file in folder data/clean/ with name main_datasets.json
 
