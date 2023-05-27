@@ -9,6 +9,7 @@ data/raw/retrieved
 
 ## my file
 data/clean/main_datasets.json
+src/data_processing/data_collection/secrets.json
 
 ### Csharp ###
 ## Ignore Visual Studio temporary files, build results, and
