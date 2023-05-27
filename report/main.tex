@@ -266,89 +266,148 @@ We find that this step substantially improves the performance of our models.
 Finally, we only preserve users that have more than 100 tweets after performing the above-mentioned cleanings.
 \\
 Also I should mention that, we used another approach which is cleaning more agressively. In this method we remove any non-Persian
-characters and all tweets are splitted with just space, not any other punctuation marks.
+characters and all tweets are splitted with just space, not any other punctuation marks. Currently we are using this method.
+\\
+After removing not-qualified users which were about 4356, we've got 3876 users at the end.
 
+\section{Data Format}
 
+\subsection{Folder Structure}
+Data folder contains four subfolders. explaination of each folder :
+\begin{itemize}
+    \item raw : this also contains one subfolder and one json file:
+          \begin{itemize}
+              \item crawled : this folder is the raw crawled data from twitter that contains all tweets of a user which mentioned
+                    his/her MBTI type in one of tweets.
+              \item datasets.json : this file is the json file which has every username, label and their related raw tweets(which later we can use pandas library to load json file)
+          \end{itemize}
+    \item clean : this also contains one subfolder and one json file:
+          \begin{itemize}
+              \item crawled : this folder is the cleaned crawled data from twitter that contains all tweets of a user which mentioned
+                    his/her MBTI type in one of tweets.
+              \item datasets.json : this file is the json file which has every username, label and their related cleaned tweets(which later we can use pandas library to load json file)
+          \end{itemize}
+    \item sentence broken : sentence broken json file which has 4 columns : username, tweets, label, sentence tokenized tweets with \textit{hazm} library
+    \item word broken : word broken json file which has 4 columns : username, tweets, label, word tokenized tweets with \textit{hazm} library
+\end{itemize}
+src folder contains two subfolders. explaination of each folder :
+\begin{itemize}
+    \item data processing : this folder is 3 folder and one python file.
+          \begin{itemize}
+              \item data collection : this folder is main part of crawling. It works in this way that first collect MBTI keywords in \textit{collect\_keyword\_tweets.py} then after crawling that user
+                    it will save them on a csv file. after that all tweets of each user are collected in \textit{specific\_user\_tweets.py} file. the \textit{script.py}
+                    file use these two file to create our raw dataset.
+              \item data cleaning : this has scrpit subfolder in it which will handle the data cleaning file with \textit{ptpd.exe} file with running \textit{script.py} file. There is another subfolder which is main part of cleaning that has been implemented in \textit{F\#}.
+              \item tokenizing : this has script \textit{tokenizer.py} which will generate sentence tokenizer and word tokenizer with \textit{hazm} library.
+              \item main.py : this script is the main part for processing the above folder mentioned and it will run with this command \textit{python main.py all}
+          \end{itemize}
+    \item data analyzing : this will generate some statistic about our dataset. which is in stats folder
+\end{itemize}
+stats folder contains files which are generated for analyzing our dataset with different criterion which is mainly comprised by \textit{csv, png and json} file.
+\subsection{Label Independency}
+As I mentioned we have 16 different MBTI label which are formed on top of four separate traits(i.e. I/E, S/N, T/F, P/J).
+So each user has unique label which is among these 16 label. For example a user can be \textit{INTJ} or \textit{ESTP}.
+
+\section{Labeling Explaination}
+Since there is ambiguity in each tweets with specific MBTI keyword and we don't know what they're describing in the tweet we had to
+label each user manually. if user was mentioning their type we would've collected that user with all of his/her tweets.
+So If a user said \fa{و منی که ENTP هستم}.
+our group labeled him/her as an ENTP type and collect all of his/her tweets.
+And on the other hand if a user said \fa{تایپ شخصیتی ENTP واقعا عجیبه}.
+this is not mentioning his/her type so we wouldn't pick this user.
+\\
+\subsection{Dataset Unit Label}
+our unit of labeling is for every single user which were filtered previously, we've collected all of his/her tweets and their related
+Label. So we train our model on users with all of their tweets to predict their personality type.
+
+\section{Data Analyzing}
+In this section we're going to some details about our datasets and its relevant labels.
+
+\subsection{Main Part Counts}
+The table below shows exact number of sentence, words, unique words and number of all rows in our dataset.
+\\
+\begin{adjustbox}{center}
+    \csvautotabular{../stats/base_data_stats.csv}
+\end{adjustbox}
+\\
+\subsection{Common and Not Common Words Count}
+In this part there are two tables showing each pair of labels how many words are common and not.
+
+\subsubsection{Common Count}
+\begin{adjustbox}{max width=\textwidth,totalheight=2in}
+    \csvautotabular{../stats/common_count.csv}
+\end{adjustbox}
+\begin{center}
+    \includegraphics[width = \textwidth, height=2in]{../stats/common_count.png}
+\end{center}
+
+\subsubsection{Not Common Count}
+
+\begin{adjustbox}{max width=\textwidth,totalheight=2in}
+    \csvautotabular{../stats/not_common_count.csv}
+\end{adjustbox}
+\begin{center}
+    \includegraphics[width = \textwidth, height=2in]{../stats/not_common_count.png}
+\end{center}
+
+\subsection{Most Uncommon Between Label Pairs}
+Since there are 16 MBTI labels and for computing most Uncommon words between every pair 16 X 16 = 256 so we can show tables but I showed them
+in a sample image that is like below
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{../stats/most_uncommon_labels.png}
+    \caption{most uncommon words between every 2 label}
+\end{figure}
+
+\subsection{Relative Normalized Frequency}
+This criterion is also same as previous one that can't be fit in a page so I show some part of it
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{../stats/RNF.png}
+    \caption{RNF between every two pair}
+\end{figure}
 \newpage
-\subsubsection*{The following will give you an overview of what you can do with this template.}
-
-\begin{Problem}
-    Type your problem here. \\
-
-    Personally I recommend Mathpix (https://mathpix.com/), which can easily export your ProblemBook.pdf to \LaTeX \ code.
-\end{Problem}
-
-\begin{Solution}
-    Write your solution here.
-
-    Example of equations. $x+1=2$. Or
-    $$x-1=0$$
-
-    Example of a list of equations.
-    \begin{align*}
-        x & = 1 \\
-        y & = 2
-    \end{align*}
-
-    Example of a matrix.
-    $$\begin{pmatrix}1&0\\0&1\end{pmatrix}$$
-
-    Example of a lemma.
-    \begin{lemma}
-        This is a lemma.
-    \end{lemma}
-
-    \section{coda explaination}
-
-    \begin{Fa}
-        پاراگراف فارسی
-        ممد اومد انجیا
-        sda
-        منم منم منن
-        چطوری پسر
-        sad
-        ستون
-        سلام
-        میو میو
-
-
-        \centering
-        \begin{adjustbox}{center}
-
-            \csvautotabular{../stats/RNF.csv}
-        \end{adjustbox}
-
-        % \end{align*}
-    \end{Fa}
-    This is a Persian word: \fa{سیب}. It means apple. so what
-
-    Example of a proof.
-    \begin{proof}
-        Write your proof here.
-    \end{proof}
-
-    Example of including a picture.
+\subsection{TF-IDF}
+this is a criterion that computes text frequency in a document and inverse document frequency. The exact formula is in like this:
+\begin{figure}[H]
     \begin{center}
-        \includegraphics[width = 4cm]{logo-hkust.png}
+        \includegraphics[width=0.8\linewidth]{images/tf-idf.png}
+        \caption{tf-idf formula}
     \end{center}
+\end{figure}
+And according to the computation of above formula, results in the following table:
+\\
+\begin{Fa}
+    \centering
+    \begin{adjustbox}{max width=\textwidth,totalheight=6cm}
+        \csvautotabular{../stats/tf-idf.csv}
+    \end{adjustbox}
+\end{Fa}
+\vspace{2cm}
+The above table shows tf-idf between every 2 pairs of label. and not suprisingly perposition words are in top occuring based on this criterion.
+we see that the word \fa{"که"} happened more than any other perposition. And it seems in twitter Iranian use the word "very" so often that it'll be
+translated to \fa{"خیلی"}. And the verb with most factor of tf-idf is \fa{"میشه"} that it's informal version of \fa{"می‌شود"}. and finally there is result that make
+sense which I believe twitter users are more Intorvert as a result they should use more the word "me" in their tweets that its translation is \fa{"من"}. so these are
+the facts that can be understood from the tf-idf table.
+\newpage
+\subsection{Unique Words Most And Least Frequent}
+In this part we calculate which words happened the most and the least. For sake of fitting into the page
+we just select first 30 of each part.
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=0.6\linewidth]{../stats/most_frequent.png}
+        \caption{Most Frequent Words}
+    \end{center}
+\end{figure}
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=0.6\linewidth]{../stats/least_frequent.png}
+        \caption{Least Frequent Words}
+    \end{center}
+\end{figure}
 
-    Example of referring to a piece of code.
-    my main problem is \(what the hell\) is something happening
-    \lstinputlisting[language = python]{Program Solution.py}
+Most occuring words are almost perposition and common verbs which happens to be around 1,4 milion. but for least frequent words all of them
+are one.
 
-    Example of a table.
-    \begin{equation*}\begin{tabular}{ c c c }
-                      & Mean     & SD       \\
-            Fall 2077 & 7.046512 & 1.714552 \\
-            Fall 1977 & 9.102941 & 1.568919
-        \end{tabular}\end{equation*}
-
-    Overall, this is a quite basic template for assignments, and above are only some basic features. I included enough packages and set a few environments. You may modify them or add features to fit your personal preference. Enjoy using it!
-\end{Solution}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Complete the assignment now
 \end{document}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

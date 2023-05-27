@@ -11,7 +11,6 @@ from matplotlib.pyplot import figure
 root_dir = Path(__file__).resolve().parents[2]
 dataset_file = root_dir / "data" / "clean" / "main_datasets.json"
 stats_dir = (root_dir / "stats").as_posix()
-
 documents = []
 df = pd.read_json(dataset_file)
 text = " ".join(list(df["tweets"].apply(lambda x: " ".join(x))))
@@ -29,10 +28,10 @@ plt.title(f"most frequent words in tweets", fontweight="bold")
 plt.xticks(rotation=90)
 last_words = list(map(lambda x: x[0], sorted_freq[-count:]))
 last_words_counts = list(map(lambda x: x[1], sorted_freq[-count:]))
-plt.figure()
-figure(figsize=(10, 10), dpi=60)
+plt.draw()
+figure(figsize=(8, 7), dpi=60)
 plt.bar(range(count), last_words_counts, tick_label=[get_display(reshape(label)) for label in last_words])
 plt.title(f"least frequent words in tweets", fontweight="bold")
 plt.xticks(rotation=90)
-plt.show()
+plt.draw()
 here = 12

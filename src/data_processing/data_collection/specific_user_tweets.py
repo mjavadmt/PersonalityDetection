@@ -2,6 +2,7 @@ import logging
 import os
 import threading
 from pathlib import Path
+import json
 
 import tweepy
 import pandas as pd
@@ -10,6 +11,7 @@ from datetime import timedelta, datetime
 
 project_dir = Path(__file__).resolve().parents[3]
 data_dir = project_dir / 'data' / 'raw'
+curr_dir = Path(__file__).resolve().parents[0].as_posix()
 
 
 class TweepySingleton:
@@ -38,12 +40,8 @@ class TweepySingleton:
 
     @staticmethod
     def _create_api():
-        api_tokens = {
-            "consumer_key": 'Tuemyojw81FZZBPpGmxVR00ID',
-            "consumer_secret": 'hZQHuYWMotTEHPQyGgEhLYkXKkCDUaPZuEQIkkrPgIcg9vXEzn',
-            "access_token": '1429311052605497345-uUrAQLyxcRTpEfHNTKPdf3UByl5LIL',
-            "access_token_secret": 'cA6vzIQkk4sk4xXgX3yLmO3M9lwhXv1d0iBHcly6yYax6',
-        }
+        f = open(f"{curr_dir}/secrets.json")
+        api_tokens = json.load(f)
         auth = tweepy.OAuthHandler(
             api_tokens["consumer_key"], api_tokens["consumer_secret"])
         auth.set_access_token(

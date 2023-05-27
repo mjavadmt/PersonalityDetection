@@ -4,6 +4,7 @@ import pandas as pd
 from pathlib import Path
 from os.path import exists
 import os
+import json
 
 curr_dir = Path(__file__).resolve().parents[0]
 output_dir = curr_dir / "output"
@@ -12,13 +13,9 @@ output_dir.mkdir(parents=True, exist_ok=True)
 KEYWORDS = ["ENFP", "ENFJ", "ESTJ", "ESFJ", "ESTP", "ESFP", "ENTJ", "ENTP", "INFP", "INTP", "INFJ", "INTJ", "ISFP",
             "ISTP", "ISFJ", "ISTJ"]
 
-api_tokens = {
-    "tweet_num": 100,
-    "consumer_key": 'Tuemyojw81FZZBPpGmxVR00ID',
-    "consumer_secret": 'hZQHuYWMotTEHPQyGgEhLYkXKkCDUaPZuEQIkkrPgIcg9vXEzn',
-    "access_token": '1429311052605497345-uUrAQLyxcRTpEfHNTKPdf3UByl5LIL',
-    "access_token_secret": 'cA6vzIQkk4sk4xXgX3yLmO3M9lwhXv1d0iBHcly6yYax6'
-}
+f = open(f"{curr_dir}/secrets.json")
+api_tokens = json.load(f)
+api_tokens["tweet_num"] = 100
 
 auth = tweepy.OAuthHandler(api_tokens["consumer_key"], api_tokens["consumer_secret"])
 auth.set_access_token(api_tokens["access_token"], api_tokens["access_token_secret"])

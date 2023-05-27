@@ -15,7 +15,9 @@ sentence_len = len(sentences.split("."))
 unique_words_len = len(set(words))
 data_len = len(df)
 
-stats_dict = {"data_len": data_len, "sentence_len": sentence_len, "word_len": words_len,
-              "unique_words_len": unique_words_len}
-pd.Series(stats_dict).to_csv(f"{stats_dir}/base_data_stats.csv", index=True)
-mmd = 12
+stats_dict = {"data-len": data_len, "sentence-len": sentence_len, "word-len": words_len,
+              "unique-words-len": unique_words_len}
+df_stats = pd.DataFrame(index=stats_dict.keys())
+df_stats["stats"] = stats_dict.values()
+df_stats.to_csv(f"{stats_dir}/base_data_stats.csv")
+
