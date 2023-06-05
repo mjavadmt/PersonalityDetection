@@ -3,6 +3,7 @@ from pathlib import Path
 import numpy as np
 from nltk import FreqDist
 
+
 root_dir = Path(__file__).resolve().parents[2]
 dataset_file = root_dir / "data" / "clean" / "main_datasets.json"
 stats_dir = (root_dir / "stats").as_posix()

@@ -187,6 +187,31 @@ innertopmargin=\topskip,
 \vspace*{0.1cm}
 
 \tableofcontents
+\newpage
+\section{Commands and Project Structure}
+The repository of implemenation\footnote{implementation : \url{https://github.com/mjavadmt/PersonalityDetection}} and dataset link\footnote{DataSet Link : \url{https://huggingface.co/datasets/mjavadmt/mbti-persian-twitter}} is available on huggingface. You can simply do the data collection and data cleaning and tokenizing task by running \textbf{\textit{`run.bat all`}} on root folder.
+\newline
+** remember to install `requirements.txt` with running command \textbf{\textit{`pip install -r requirements.txt`}}.
+\\
+there are various subparts of this module that each will be done individually instead of \textit{`all`} args:
+\begin{itemize}
+    \item \textit{collect} : do just the crawling part which is mainly extracting MBTI keywords and then collecting tweets of user who have used this MBTI type in one of their tweets. So it contains two twitter api calling.
+    \item \textit{clean} : do just the cleaning part. after crawling we saved tweets of a user as an one json file with file named their username. we iterate through the folder and cleaned all json file inside that folder.
+    \item \textit{tokenize} : do just the tokenizing part. doing hazm tokenization which is suitable for Persian text.
+    \item \textit{analyze} : do just analyze part. some statistic that could be collected with our dataset is done by this part. and stats are saved in root folder with name stats.
+    \item \textit{report} : making report of this project. do \textit{xelatex} command to make pdf file.
+\end{itemize}
+
+\vspace{1cm}
+There are some additional note that should be mentioned:
+\begin{itemize}
+    \item remember that dataset created during running of code is sample of our whole dataset. for analyzing part you should download
+          dataset from huggingface. after downloading you should extract and locate the file in folder data/clean/ with name \textit{main\_datasets.json}.
+    \item Since analyzing task is time consuming and it may take a while to complete it can be done separately or by following command:
+          \textbf{\textit{run.bat all analyze}}.
+    \item after completion of above command report will be automatically updated by \textit{xelatex} command and all images and csv tables which were changed by analyzing new dataset will be in the new report pdf.
+    \item ReportOut directory in root folder of this repository is main report that is being changed every time by running command which were previously said.
+\end{itemize}
 
 \newpage
 % \vspace*{1pt}
@@ -199,7 +224,8 @@ and most applicable source. Because it contains a variety of people
 and has a wide range of data, which is useful for us to collect. As a
 result, we decided to choose Twitter as our data origin due to its
 popularity, accessibility, and also comprise a lot of texts. We have
-reached three different methods of collecting data
+reached three different methods of collecting data. You can find implementation in \href{https://github.com/mjavadmt/PersonalityDetection}{this link} and
+dataset in \href{https://huggingface.co/datasets/mjavadmt/mbti-persian-twitter}{this link}.
 
 \section{Data Processing}
 
@@ -220,7 +246,7 @@ Figure \ref{bio_figure} shows a sample of our collected data based on a mentione
 \end{figure}
 
 
-\subsection{Tweet Search}
+\subsection{Tweets Search}
 In this method, we tried collecting user tweets using a Python library called Twint.
 Through this approach, we have searched for 16 possible MBTI labels in users' tweets in which one of these labels is mentioned.
 Note that queried tweets are based on recent tweets in the Persian language.
@@ -292,7 +318,7 @@ Data folder contains four subfolders. explaination of each folder :
 \end{itemize}
 src folder contains two subfolders. explaination of each folder :
 \begin{itemize}
-    \item data processing : this folder is 3 folder and one python file.
+    \item data processing : this folder contains 3 folder and one python file.
           \begin{itemize}
               \item data collection : this folder is main part of crawling. It works in this way that first collect MBTI keywords in \textit{collect\_keyword\_tweets.py} then after crawling that user
                     it will save them on a csv file. after that all tweets of each user are collected in \textit{specific\_user\_tweets.py} file. the \textit{script.py}
@@ -306,9 +332,11 @@ src folder contains two subfolders. explaination of each folder :
 stats folder contains files which are generated for analyzing our dataset with different criterion which is mainly comprised by \textit{csv, png and json} file.
 \subsection{Label Independency}
 As I mentioned we have 16 different MBTI label which are formed on top of four separate traits(i.e. I/E, S/N, T/F, P/J).
-So each user has unique label which is among these 16 label. For example a user can be \textit{INTJ} or \textit{ESTP}.
+So each user has unique label which is among these 16 label. For example a user can be \textit{INTJ} or \textit{ESTP}. I should also
+mention that, in training phase we want to feed our model each user with its tweets and train it on individual four trait separately.
+So at the end we have got four models based on 4 trait that are predicting binary classification on four traits(I/E, S/N, T/F, P/J).
 
-\section{Labeling Explaination}
+\section{Labeling Phase Explaination}
 Since there is ambiguity in each tweets with specific MBTI keyword and we don't know what they're describing in the tweet we had to
 label each user manually. if user was mentioning their type we would've collected that user with all of his/her tweets.
 So If a user said \fa{و منی که ENTP هستم}.
@@ -322,7 +350,15 @@ Label. So we train our model on users with all of their tweets to predict their 
 
 \section{Data Analyzing}
 In this section we're going to some details about our datasets and its relevant labels.
-
+As I mentioned there can be two types of analyzing:
+\begin{itemize}
+    \item one can be analyzing on 16 different personality types and consider each of these 16 types as an individual class
+          and count for each of them separately
+    \item another can be considering 4 traits and training 4 model on these traits. we should notice that these model are completely
+          different from each other, it means that we have got 3876 traits so one time we are training on our I/E model on whole dataset
+          another time we are training our S/N again on whole dataset. So we should consider each trait separated.
+\end{itemize}
+\newpage
 \subsection{Main Part Counts}
 The table below shows exact number of sentence, words, unique words and number of all rows in our dataset.
 \\
@@ -333,12 +369,12 @@ The table below shows exact number of sentence, words, unique words and number o
 \subsection{Common and Not Common Words Count}
 In this part there are two tables showing each pair of labels how many words are common and not.
 
-\subsubsection{Common Count}
+\subsubsection{Common Count on 16 personality}
 \begin{adjustbox}{max width=\textwidth,totalheight=2in}
     \csvautotabular{../stats/common_count.csv}
 \end{adjustbox}
 \begin{center}
-    \includegraphics[width = \textwidth, height=2in]{../stats/common_count.png}
+    \includegraphics[width = \textwidth, height=7cm]{../stats/common_count.png}
 \end{center}
 
 \subsubsection{Not Common Count}
@@ -347,9 +383,17 @@ In this part there are two tables showing each pair of labels how many words are
     \csvautotabular{../stats/not_common_count.csv}
 \end{adjustbox}
 \begin{center}
-    \includegraphics[width = \textwidth, height=2in]{../stats/not_common_count.png}
+    \includegraphics[width = \textwidth, height=6cm]{../stats/not_common_count.png}
 \end{center}
 
+\subsubsection{Common And Not Common Count on 4 Traits}
+this stats examines on individual 4 traits instead of considering all 16 together.
+\\
+
+\begin{adjustbox}{center}
+    \csvautotabular{../stats/common_not_common_pair.csv}
+\end{adjustbox}
+\\
 \subsection{Most Uncommon Between Label Pairs}
 Since there are 16 MBTI labels and for computing most Uncommon words between every pair 16 X 16 = 256 so we can show tables but I showed them
 in a sample image that is like below
@@ -359,14 +403,33 @@ in a sample image that is like below
     \caption{most uncommon words between every 2 label}
 \end{figure}
 
+\subsubsection{based on 4 trait}
+In this table we are showing between every two pair of traits which words are most uncommon. Therefore each index of rows means
+words exists mostly in first but not in second. For example if index is E-I, words in this row are showing that they appeared alot in E trait but not happened in I trait.
+\\
+\begin{Fa}
+    \centering
+    \begin{adjustbox}{max width=0.8\textwidth}
+        \csvautotabular{../stats/most_repeated_not_common_pair.csv}
+    \end{adjustbox}
+\end{Fa}
+
 \subsection{Relative Normalized Frequency}
 This criterion is also same as previous one that can't be fit in a page so I show some part of it
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\linewidth]{../stats/RNF.png}
+    \includegraphics[width=0.6\linewidth]{../stats/RNF.png}
     \caption{RNF between every two pair}
 \end{figure}
-\newpage
+\subsubsection{based on 4 trait}
+This table also is examining the RNF between pair of traits which each first index is wanted label and the second index is other labels.
+\\
+\begin{Fa}
+    \centering
+    \begin{adjustbox}{max width=0.8\textwidth}
+        \csvautotabular{../stats/RNF-pair.csv}
+    \end{adjustbox}
+\end{Fa}
 \subsection{TF-IDF}
 this is a criterion that computes text frequency in a document and inverse document frequency. The exact formula is in like this:
 \begin{figure}[H]
@@ -381,6 +444,16 @@ And according to the computation of above formula, results in the following tabl
     \centering
     \begin{adjustbox}{max width=\textwidth,totalheight=6cm}
         \csvautotabular{../stats/tf-idf.csv}
+    \end{adjustbox}
+\end{Fa}
+\newpage
+\subsubsection{based on 4 trait}
+This Part is investigating tf-idf between every pair of traits.
+\\
+\begin{Fa}
+    \centering
+    \begin{adjustbox}{max width=\textwidth}
+        \csvautotabular{../stats/tf-idf_pair.csv}
     \end{adjustbox}
 \end{Fa}
 \vspace{2cm}

@@ -1,14 +1,15 @@
 # PersonalityDetection
 
 This repository is for personality detection task based Myers-Briggs(MBTI) 16 types on [Persian dataset](https://huggingface.co/datasets/mjavadmt/mbti-persian-twitter). 
-You can simply do the data collection and data cleaning and tokenizing task by running *run.bat all* on root folder.
-- remember to install `requirements.txt` with running command *pip install -r requirements.txt*
+You can simply do the data collection and data cleaning and tokenizing task by running ***run.bat all*** on root folder.
+- remember to install `requirements.txt` with running command **pip install -r requirements.txt**
 
 there are various subparts of this module that each will be done individually instead of *all* args:
 - *collect* : do just the crawling part
 - *clean* : do just the cleaning part
 - *tokenize* : do just the tokenizing part
 - *analyze* : do just analyze part
+- *report* : making report of this project
 
 -- remember that dataset created during running of code is sample of our whole dataset. for analyzing part you should download
 dataset from this [Link](https://huggingface.co/datasets/mjavadmt/mbti-persian-twitter). after downloading you should extract and locate the file in folder data/clean/ with name main_datasets.json

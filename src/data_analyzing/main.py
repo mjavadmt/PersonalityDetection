@@ -14,9 +14,18 @@ import relative_normalized_frequency
 print("RNF done")
 import tf_idf
 print("tf_idf done")
+# import most_repeated_not_common_pair
+# print("most repeated not common trait done")
+# import RNF_pair
+# print("RNF trait done")
+# import unique_common_and_not_between_pairs
+# print("unique common and not trait done")
+# import tf_idf_pair
+# print("tf_idf pair done")
 
 
 print("all done ...")
 print("close images window to terminate run mode")
+print("please wait a while")
 
 plt.show()
