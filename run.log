@@ -1,0 +1,463 @@
+-----------------------------
+at time : 2023-07-04 18:13:20
+model word2vec for trait E is done
+-----------------------------
+at time : 2023-07-04 18:14:39
+model word2vec for trait I is done
+-----------------------------
+at time : 2023-07-04 22:56:47
+model word2vec for trait E is done
+-----------------------------
+at time : 2023-07-04 22:59:20
+model word2vec for trait I is done
+-----------------------------
+at time : 2023-07-04 23:02:58
+model word2vec 'all' is done
+-----------------------------
+at time : 2023-07-05 17:44:39
+tokenizer on k fold : 1 and vocab size : 4000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-05 17:44:42
+tokenizer on k fold : 2 and vocab size : 4000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-05 17:44:46
+tokenizer on k fold : 3 and vocab size : 4000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-05 17:44:49
+tokenizer on k fold : 4 and vocab size : 4000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-05 17:44:52
+tokenizer on k fold : 5 and vocab size : 4000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-05 17:44:55
+tokenizer on k fold : 1 and vocab size : 3000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-05 17:44:59
+tokenizer on k fold : 2 and vocab size : 3000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-05 17:45:02
+tokenizer on k fold : 3 and vocab size : 3000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-05 17:45:05
+tokenizer on k fold : 4 and vocab size : 3000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-05 17:45:08
+tokenizer on k fold : 5 and vocab size : 3000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-05 17:45:11
+tokenizer on k fold : 1 and vocab size : 2000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-05 17:45:15
+tokenizer on k fold : 2 and vocab size : 2000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-05 17:45:18
+tokenizer on k fold : 3 and vocab size : 2000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-05 17:45:22
+tokenizer on k fold : 4 and vocab size : 2000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-05 17:45:25
+tokenizer on k fold : 5 and vocab size : 2000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-05 17:45:29
+tokenizer on k fold : 1 and vocab size : 1000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-05 17:45:33
+tokenizer on k fold : 2 and vocab size : 1000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-05 17:45:37
+tokenizer on k fold : 3 and vocab size : 1000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-05 17:45:41
+tokenizer on k fold : 4 and vocab size : 1000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-05 17:45:44
+tokenizer on k fold : 5 and vocab size : 1000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-06 11:40:44
+model word2vec for trait N is done
+-----------------------------
+at time : 2023-07-06 11:43:04
+model word2vec for trait S is done
+-----------------------------
+at time : 2023-07-06 11:45:12
+model word2vec for trait F is done
+-----------------------------
+at time : 2023-07-06 11:47:43
+model word2vec for trait T is done
+-----------------------------
+at time : 2023-07-06 11:50:11
+model word2vec for trait J is done
+-----------------------------
+at time : 2023-07-06 11:52:19
+model word2vec for trait P is done
+-----------------------------
+at time : 2023-07-07 18:13:03
+feature engineering with sentence_length is trained
+-----------------------------
+at time : 2023-07-07 18:17:26
+feature engineering with sentence_length is trained
+-----------------------------
+at time : 2023-07-07 23:19:51
+feature engineering with word_length is trained
+-----------------------------
+at time : 2023-07-07 23:20:49
+feature engineering with word_length is trained
+-----------------------------
+at time : 2023-07-07 23:22:43
+feature engineering with word_length is trained
+-----------------------------
+at time : 2023-07-07 23:54:49
+feature engineering with word_unigram is trained
+-----------------------------
+at time : 2023-07-08 00:09:57
+feature engineering with word_unigram is trained
+-----------------------------
+at time : 2023-07-08 00:11:05
+feature engineering with word_unigram is trained
+-----------------------------
+at time : 2023-07-08 00:11:55
+feature engineering with word_length is trained
+-----------------------------
+at time : 2023-07-08 00:15:16
+feature engineering with word_bigram is trained
+-----------------------------
+at time : 2023-07-08 00:55:46
+feature engineering with word2vec is trained
+-----------------------------
+at time : 2023-07-08 00:59:49
+feature engineering with word2vec-bigram is trained
+-----------------------------
+at time : 2023-07-08 01:09:20
+feature engineering with ParsBERT-embeddings is trained
+-----------------------------
+at time : 2023-07-08 01:11:20
+feature engineering with sentence_length is trained
+-----------------------------
+at time : 2023-07-08 01:12:21
+feature engineering with sentence_length is trained
+-----------------------------
+at time : 2023-07-08 01:12:23
+feature engineering with word_length is trained
+-----------------------------
+at time : 2023-07-08 01:12:25
+feature engineering with word_unigram is trained
+-----------------------------
+at time : 2023-07-08 01:12:26
+feature engineering with word_bigram is trained
+-----------------------------
+at time : 2023-07-08 01:12:38
+feature engineering with word2vec is trained
+-----------------------------
+at time : 2023-07-08 01:12:58
+feature engineering with word2vec-bigram is trained
+-----------------------------
+at time : 2023-07-08 01:13:17
+feature engineering with ParsBERT-embeddings is trained
+-----------------------------
+at time : 2023-07-08 01:19:38
+feature engineering with sentence_length is trained
+-----------------------------
+at time : 2023-07-08 01:19:39
+feature engineering with word_length is trained
+-----------------------------
+at time : 2023-07-08 01:19:42
+feature engineering with word_unigram is trained
+-----------------------------
+at time : 2023-07-08 01:19:43
+feature engineering with word_bigram is trained
+-----------------------------
+at time : 2023-07-08 01:19:54
+feature engineering with word2vec is trained
+-----------------------------
+at time : 2023-07-08 01:20:14
+feature engineering with word2vec-bigram is trained
+-----------------------------
+at time : 2023-07-08 01:20:35
+feature engineering with ParsBERT-embeddings is trained
+-----------------------------
+at time : 2023-07-08 01:23:00
+feature engineering with sentence_length is trained
+-----------------------------
+at time : 2023-07-08 01:23:02
+feature engineering with word_length is trained
+-----------------------------
+at time : 2023-07-08 01:23:04
+feature engineering with word_unigram is trained
+-----------------------------
+at time : 2023-07-08 01:23:05
+feature engineering with word_bigram is trained
+-----------------------------
+at time : 2023-07-08 01:23:18
+feature engineering with word2vec is trained
+-----------------------------
+at time : 2023-07-08 01:23:37
+feature engineering with word2vec-bigram is trained
+-----------------------------
+at time : 2023-07-08 01:23:57
+feature engineering with ParsBERT-embeddings is trained
+-----------------------------
+at time : 2023-07-09 00:39:55
+feature engineering with ParsBERT-embeddings is trained
+-----------------------------
+at time : 2023-07-09 00:52:46
+feature engineering with word_unigram is trained
+-----------------------------
+at time : 2023-07-09 00:54:18
+feature engineering with word_unigram is trained
+-----------------------------
+at time : 2023-07-09 00:58:05
+feature engineering with word_bigram is trained
+-----------------------------
+at time : 2023-07-09 01:08:40
+feature engineering with word_unigram is trained
+-----------------------------
+at time : 2023-07-09 01:09:11
+feature engineering with word_unigram is trained
+-----------------------------
+at time : 2023-07-09 01:09:45
+feature engineering with word_unigram is trained
+-----------------------------
+at time : 2023-07-09 01:10:50
+feature engineering with word_unigram is trained
+-----------------------------
+at time : 2023-07-09 01:11:28
+feature engineering with word_unigram is trained
+-----------------------------
+at time : 2023-07-09 01:11:55
+feature engineering with word_unigram is trained
+-----------------------------
+at time : 2023-07-09 01:12:42
+feature engineering with word_bigram is trained
+-----------------------------
+at time : 2023-07-09 01:13:28
+feature engineering with word_length is trained
+-----------------------------
+at time : 2023-07-09 01:19:49
+feature engineering with word_unigram is trained
+-----------------------------
+at time : 2023-07-09 01:24:16
+feature engineering with ParsBERT-embeddings is trained
+-----------------------------
+at time : 2023-07-09 01:25:19
+feature engineering with sentence_length is trained
+-----------------------------
+at time : 2023-07-09 01:25:21
+feature engineering with word_length is trained
+-----------------------------
+at time : 2023-07-09 01:25:23
+feature engineering with word_unigram is trained
+-----------------------------
+at time : 2023-07-09 01:25:24
+feature engineering with word_bigram is trained
+-----------------------------
+at time : 2023-07-09 01:25:36
+feature engineering with word2vec is trained
+-----------------------------
+at time : 2023-07-09 01:25:55
+feature engineering with word2vec-bigram is trained
+-----------------------------
+at time : 2023-07-09 01:26:18
+feature engineering with ParsBERT-embeddings is trained
+-----------------------------
+at time : 2023-07-09 01:28:32
+feature engineering with sentence_length is trained
+-----------------------------
+at time : 2023-07-09 01:28:34
+feature engineering with word_length is trained
+-----------------------------
+at time : 2023-07-09 01:28:36
+feature engineering with word_unigram is trained
+-----------------------------
+at time : 2023-07-09 01:28:37
+feature engineering with word_bigram is trained
+-----------------------------
+at time : 2023-07-09 01:28:51
+feature engineering with word2vec is trained
+-----------------------------
+at time : 2023-07-09 01:29:11
+feature engineering with word2vec-bigram is trained
+-----------------------------
+at time : 2023-07-09 01:29:33
+feature engineering with ParsBERT-embeddings is trained
+-----------------------------
+at time : 2023-07-09 01:38:46
+feature engineering with sentence_length is trained
+-----------------------------
+at time : 2023-07-09 01:38:47
+feature engineering with word_length is trained
+-----------------------------
+at time : 2023-07-09 01:38:50
+feature engineering with word_unigram is trained
+-----------------------------
+at time : 2023-07-09 01:38:51
+feature engineering with word_bigram is trained
+-----------------------------
+at time : 2023-07-09 01:39:02
+feature engineering with word2vec is trained
+-----------------------------
+at time : 2023-07-09 01:39:21
+feature engineering with word2vec-bigram is trained
+-----------------------------
+at time : 2023-07-09 01:39:44
+feature engineering with ParsBERT-embeddings is trained
+-----------------------------
+-----------------------------
+at time : 2023-07-09 19:22:39
+model architecture engineering with combined_parsbert_word2vec is trained
+-----------------------------
+at time : 2023-07-11 22:42:26
+model architecture engineering with combined_parsbert_word2vec is trained
+-----------------------------
+at time : 2023-07-11 23:37:09
+model word2vec for trait E is done
+-----------------------------
+at time : 2023-07-11 23:39:19
+model word2vec for trait I is done
+-----------------------------
+at time : 2023-07-11 23:42:30
+model word2vec 'all' is done
+-----------------------------
+at time : 2023-07-11 23:57:22
+tokenizer on k fold : 1 and vocab size : 4000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-11 23:57:26
+tokenizer on k fold : 2 and vocab size : 4000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-11 23:57:29
+tokenizer on k fold : 3 and vocab size : 4000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-11 23:57:32
+tokenizer on k fold : 4 and vocab size : 4000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-11 23:57:36
+tokenizer on k fold : 5 and vocab size : 4000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-11 23:57:39
+tokenizer on k fold : 1 and vocab size : 3000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-11 23:57:43
+tokenizer on k fold : 2 and vocab size : 3000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-11 23:57:46
+tokenizer on k fold : 3 and vocab size : 3000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-11 23:57:50
+tokenizer on k fold : 4 and vocab size : 3000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-11 23:57:53
+tokenizer on k fold : 5 and vocab size : 3000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-11 23:57:57
+tokenizer on k fold : 1 and vocab size : 2000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-11 23:58:00
+tokenizer on k fold : 2 and vocab size : 2000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-11 23:58:04
+tokenizer on k fold : 3 and vocab size : 2000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-11 23:58:08
+tokenizer on k fold : 4 and vocab size : 2000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-11 23:58:11
+tokenizer on k fold : 5 and vocab size : 2000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-11 23:58:15
+tokenizer on k fold : 1 and vocab size : 1000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-11 23:58:19
+tokenizer on k fold : 2 and vocab size : 1000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-11 23:58:23
+tokenizer on k fold : 3 and vocab size : 1000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-11 23:58:27
+tokenizer on k fold : 4 and vocab size : 1000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-11 23:58:31
+tokenizer on k fold : 5 and vocab size : 1000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-12 00:01:04
+tokenizer on k fold : 1 and vocab size : 4000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-12 00:01:07
+tokenizer on k fold : 2 and vocab size : 4000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-12 00:01:10
+tokenizer on k fold : 3 and vocab size : 4000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-12 00:01:14
+tokenizer on k fold : 4 and vocab size : 4000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-12 00:01:17
+tokenizer on k fold : 5 and vocab size : 4000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-12 00:01:21
+tokenizer on k fold : 1 and vocab size : 3000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-12 00:01:25
+tokenizer on k fold : 2 and vocab size : 3000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-12 00:01:28
+tokenizer on k fold : 3 and vocab size : 3000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-12 00:01:32
+tokenizer on k fold : 4 and vocab size : 3000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-12 00:01:35
+tokenizer on k fold : 5 and vocab size : 3000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-12 00:01:39
+tokenizer on k fold : 1 and vocab size : 2000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-12 00:01:42
+tokenizer on k fold : 2 and vocab size : 2000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-12 00:01:46
+tokenizer on k fold : 3 and vocab size : 2000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-12 00:01:49
+tokenizer on k fold : 4 and vocab size : 2000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-12 00:01:53
+tokenizer on k fold : 5 and vocab size : 2000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-12 00:01:57
+tokenizer on k fold : 1 and vocab size : 1000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-12 00:02:01
+tokenizer on k fold : 2 and vocab size : 1000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-12 00:02:05
+tokenizer on k fold : 3 and vocab size : 1000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-12 00:02:08
+tokenizer on k fold : 4 and vocab size : 1000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-12 00:02:12
+tokenizer on k fold : 5 and vocab size : 1000 has been trained and saved successfully
+-----------------------------
+at time : 2023-07-12 00:02:43
+feature engineering with sentence_length is trained
+-----------------------------
+at time : 2023-07-12 00:02:45
+feature engineering with word_length is trained
+-----------------------------
+at time : 2023-07-12 00:02:47
+feature engineering with word_unigram is trained
+-----------------------------
+at time : 2023-07-12 00:02:49
+feature engineering with word_bigram is trained
+-----------------------------
+at time : 2023-07-12 00:03:01
+feature engineering with word2vec is trained
+-----------------------------
+at time : 2023-07-12 00:03:20
+feature engineering with word2vec-bigram is trained
+-----------------------------
+at time : 2023-07-12 00:03:45
+feature engineering with ParsBERT-embeddings is trained
+-----------------------------
+at time : 2023-07-12 00:04:33
+model architecture engineering with combined_parsbert_word2vec is trained

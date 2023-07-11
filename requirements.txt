@@ -9,3 +9,8 @@ tweepy==4.9.0
 scikit-learn==0.24.2
 nltk==3.3
 hazm==0.7.0
+sentencepiece==0.1.97
+twint~=2.1.21
+tqdm==4.65.0
+transformers==4.21.3
+torch==2.0.0+cu117
