@@ -44,12 +44,11 @@ there is seperate folder for analyzing data which has various kinds of analyzing
 
 ## Phase 2
 This Phase is concentrating on developing differnet models. Various experminets has been implemented to evaluate and retreive final best model.
-<br/>
-Like former phase you can run all parts by executing ***run_2.bat all*** 
-<br/>
+<!-- <br/> -->
+Like former phase you can run all parts by executing `***run_2.bat all*** `
+<!-- <br/> -->
 -- some parts couldn't be automated so that files are provided in python notebook to execute manually(lack of enough gpu on local made me do that)
-
-<br/>
+<!-- <br/> -->
 The experiments has been made through this phase is divided into following subparts:
 - word2vec : this part trains word2vec model with skip-gram approach and negative sampling on each labels separately. it also train on whole dataset and produce `all.word2vec.npy` model 
 - tokenization : trains `SentencePiece` model with different size of *vocab_size* on our dataset with implementing KFold cross validation. and then calculates *unk* token on each *vocab_size*.
