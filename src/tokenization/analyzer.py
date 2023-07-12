@@ -49,13 +49,13 @@ for vocab_size in sizes:
             token_prefixed = "▁" + token
             if not sp.PieceToId(token) and not sp.PieceToId(token_prefixed):
                 unknown_tokens += 1
-        unknown_to_all[f"vocab-size-{vocab_size}"][f"fold-{counter}"] = ((unknown_tokens // 10) / total_tokens) * 100
+        unknown_to_all[f"vocab-size-{vocab_size}"][f"fold-{counter}"] = round(((unknown_tokens // 10) / total_tokens) * 100, 3)
         counter += 1
     print()
 
 df_stat = pd.DataFrame(unknown_to_all)
 for vocab_size in sizes:
-    df_stat.loc["all-average", f"vocab-size-{vocab_size}"] = df_stat[f"vocab-size-{vocab_size}"].mean()
+    df_stat.loc["all-average", f"vocab-size-{vocab_size}"] = round(df_stat[f"vocab-size-{vocab_size}"].mean(), 3)
 df_stat.to_csv(f"{stats_dir}/unk-percentage.csv")
 plt.scatter(sizes, df_stat.loc["all-average"])
 plt.title("ratio of unknown token to all")
